@@ -1,0 +1,22 @@
+{
+  "name": "nikel303/yii_conditional_validator",
+  "description": "Executes a validation after other validation rules have been successfully passed",
+  "keywords": ["yii", "validator"],
+	"type": "yii-validator",
+    "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "nikel303",
+      "email": "nikel303@ya.ru"
+    }
+  ],
+  "require": {
+    "php": "~5.4",
+    "yiisoft/yii": "1.1.*",
+  },
+  "autoload": {
+    "psr-4": {
+      "YiiConditionalValidator\\": "src/"
+    }
+  }
+}
