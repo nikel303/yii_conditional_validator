@@ -53,7 +53,7 @@ class Validator extends \CValidator {
 		if (!$this->skipConditional && !$this->validateConditional($obj, $this->conditionalRules))
 			return false;
 
-		$validator = CValidator::createValidator($this->rule[0], $object, $attribute, array_slice($this->rule, 1, null, true));
+		$validator = \CValidator::createValidator($this->rule[0], $object, $attribute, array_slice($this->rule, 1, null, true));
 		$validator->validate($object);
 
 		$obj = null;
@@ -77,13 +77,13 @@ class Validator extends \CValidator {
 						continue;
 				}
 			} else
-				throw new CException(Yii::t('EConditionalValidator', 'Group must be an array of rules'));
+				throw new \CException(\Yii::t('EConditionalValidator', 'Group must be an array of rules'));
 		} else {
 			list($attributes, $conditionalValidator) = $rule;
 
 			$parameters = array_splice($rule, 2);
 
-			$validator = CValidator::createValidator($conditionalValidator, $object, $attributes, $parameters);
+			$validator = \CValidator::createValidator($conditionalValidator, $object, $attributes, $parameters);
 
 			$validator->validate($object);
 			if ($object->hasErrors()) {
